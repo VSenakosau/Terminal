@@ -53,15 +53,16 @@ $ nano first.txt
 ```
 Enter the following text:
 ```
-It's my life
-It's now or never
-I ain't gonna live forever
-I just want to live while I'm alive
-(It's my life)
-My heart is like an open highway
-Like Frankie said I did it my way
-I just wanna live while I'm alive
-It's my life
+Thank you for all the Hours you spend,
+A ttention you give,
+Needs that you tend,
+Knowledge you pass on,
+Your special touch,
+Offering guidance,
+Undaunted by much,
+Time you spend planning,
+Efforts you make,
+Angles to learning.
 ```
 Save changes to the file and exit:
 ```
@@ -79,19 +80,102 @@ vvsen@Vadim MINGW64 /c/vadim/qa/HW_terminal/hw1
 ```
 ## 13. Move any 2 files you created to any other folder.
 ```
-vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder1
-$ mv first.txt second.txt subfolder1
-or
-vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder1
-$ mv first.txt second.txt /c/vadim/qa/hw_terminal/hw1
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ mv folder1/first.txt folder1/second.txt folder2
 ```
 ## 14. Copy any 2 files you created to any other folder.
 ```
-vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder1
-$ cp third.txt fourth.json subfolder2
-or
-vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder1
-$ cp subfolder2/{third.txt,fourth.json} subfolder3
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ cp folder1/third.txt folder1/fourth.json folder3
 ```
 ## 15. Find the file by name.
 ```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ find . -name first.txt
+```
+In response, we received:
+```
+./folder2/first.txt
+```
+## 16. View the content in real time (grep command).
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ tail -f folder2/first.txt | grep -i "knowledge"
+```
+In response, we received:
+```
+Knowledge you pass on,
+```
+Open the "first.txt" file via the web interface and add the next line:
+```
+Thank you for the knowledge!
+```
+Then ```press``` Enter and ```Ctrl+S```
+As a result, we see the added line with the keyword in the console:
+```
+Knowledge you pass on,
+Thank you for the knowledge!
+```
+To exit the command, press Ctrl + C
+## 17. Show the first few lines from a text file.
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ head ./folder2/first.txt
+```
+In response, we received:
+```
+Thank you for all the Hours you spend,
+Attention you give,
+Needs that you tend,
+Knowledge you pass on,
+Your special touch,
+Offering guidance,
+Undaunted by much,
+Time you spend planning,
+Efforts you make,
+Angles to learning.
+```
+If you want to specify a certain number of lines, use "-n".
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ head -n 4 ./folder2/first.txt
+```
+In response, we received:
+```
+Thank you for all the Hours you spend,
+Attention you give,
+Needs that you tend,
+Knowledge you pass on,
+```
+## 18. Show the last few lines of a text file.
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ tail ./folder2/first.txt
+```
+In response, we received:
+```
+Attention you give,
+Needs that you tend,
+Knowledge you pass on,
+Your special touch,
+Offering guidance,
+Undaunted by much,
+Time you spend planning,
+Efforts you make,
+Angles to learning.
+Thank you for the knowledge!
+```
+If you want to specify a certain number of lines, use "-n".
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
+$ tail -n 5 ./folder2/first.txt
+```
+In response, we received:
+```
+Undaunted by much,
+Time you spend planning,
+Efforts you make,
+Angles to learning.
+Thank you for the knowledge!
+```
+## 19. 
