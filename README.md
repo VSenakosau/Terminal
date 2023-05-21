@@ -178,4 +178,86 @@ Efforts you make,
 Angles to learning.
 Thank you for the knowledge!
 ```
-## 19. 
+## 19. View the contents of a long file (less command)
+We need a file with a long text. Use www.lipsum.com to generate a text of 3000 words and save it to a file second.txt
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder2
+$ less second.txt
+```
+Press the `Enter` key to scroll forward one line  
+Press the `Spacebar` to scroll forward one page at a time  
+Press the `b` to scroll backward one page  
+Press the `d` key to scroll down half a page  
+Press the `u` to scroll up half a page  
+Press the `g` to jump to the beginning of the file  
+Press the `G` to jump to the end of the file  
+Use `-N` to display line numbers  
+Use `/Lorem` to find all the words "Lorem" in this file  
+You can search forward `/` or backward `?` and navigate to the next `n` or previous `N` 
+Press the `q` to exit  
+## 20. Show date and time (current)  
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder2
+$ date
+```
+The response:
+```
+Sun May 21 16:55:56     2023
+```
+## 21. Send an http request to the server http://162.55.220.72:5005/terminal-hw-request
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1/folder2
+$ curl http://162.55.220.72:5005/terminal-hw-request
+```
+The response:
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --100   232  100   232    0     0   2275      0 --:--:-- --:--:-- --:--:--  2297<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+```
+The response received indicates that the server returned a 404 Not Found error.  
+## 22. Write a script that will automatically execute the items 3, 4, 5, 6, 7, 8, 13
+Creating a file myscript.sh
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal
+$ touch myscript.sh
+```
+Opening the file myscript.sh through the `nano` editor    
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal
+$ nano myscript.sh
+```
+Enter the following information:  
+```
+#!/bin/bash  
+cd C:\\Vadim\\qa\\hw_terminal\\hw1  
+mkdir folder4 folder5 folder6  
+cd folder4  
+touch first.txt second.txt third.txt fourth.json fifth.json  
+mkdir subfolder4 subfolder5 subfolder6  
+ls  
+mv first.txt second.txt subfolder4  
+echo "You did it, you are great"  
+```
+Press  
+ctrl+O -> Enter  
+ctrl+X  
+Let's make this file executable, otherwise, if you try to run it, you will encounter the Permission denied error  
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal
+$ chmod +x myscript.sh
+```
+Now we can execute the script myscript.sh
+```
+vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal
+$ ./myscript.sh
+```
+The response:
+```
+fifth.json  fourth.json  subfolder4  subfolder6
+first.txt   second.txt   subfolder5  third.txt
+You did it, you are great
+```
