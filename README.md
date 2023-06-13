@@ -272,3 +272,74 @@ tf_2.txt
 `-l` option: This option instructs grep to display only the filenames of the matching files, rather than showing the matching lines.  
 The directory inner_dir_1 is listed as an error message when using grep `-l "second" *` because it is treated as a file, and grep attempts to search within it.  
 The `-s` option suppresses the error message for the directory inner_dir_1.  
+## 31. Find all lines in all files where there is no “second” combination
+```
+vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
+$ grep -rv "second"
+```
+Response:
+```
+inner_dir_1/tf_3.txt:It`s a beautiful day
+inner_dir_1/tf_3.txt:The sun is shining
+inner_dir_1/tf_3.txt:I feel good
+inner_dir_1/tf_3.txt:the sec 2
+inner_dir_1/tf_3.txt:the SeCoNd 2
+inner_dir_1/tF_5.txt:1
+inner_dir_1/tF_5.txt:2
+inner_dir_1/tF_5.txt:3
+inner_dir_1/tF_5.txt:4
+inner_dir_1/tF_5.txt:5
+inner_dir_1/tF_5.txt:6
+inner_dir_1/tF_5.txt:7
+inner_dir_1/tF_5.txt:8
+inner_dir_1/tF_5.txt:9
+inner_dir_1/tF_5.txt:10
+inner_dir_1/tF_5.txt:11
+inner_dir_1/tF_5.txt:12
+inner_dir_1/tF_5.txt:13
+tf_2.txt:- the first 1
+tf_2.txt:- the third 3
+tf_2.txt:the sec 3
+tf_2.txt:the seConD 2
+```
+```-r``` (recursive) - Enables recursive searching   
+```-v``` (invert-match) - Inverts the match, so it displays lines that do not contain the search pattern
+## 32. Find only the name and path to files where there is no “second” combination
+```
+vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
+$ grep -rL "second"
+```
+Response:
+```
+inner_dir_1/tf_4.txt
+inner_dir_1/tF_5.txt
+tf_1.txt
+```
+```-r``` (recursive) Enables recursive searching   
+```-L``` (files without match) Outputs only the names of files that do not contain the search pattern
+## 33. Output the last 4 lines of any text file to the terminal
+```
+vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
+$ tail -n 4 tf_2.txt
+```
+Response:
+```
+- the second 2
+- the third 3
+the sec 3
+the seConD 2
+```
+```-n 4``` - this option is used to specify the number of lines to be displayed   
+## 34. Output the first lines of any text file to terminal 4.
+```
+vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
+$ head -n 4 tf_2.txt
+```
+Response:
+```
+- the first 1
+- the second 2
+- the third 3
+the sec 3
+```
+## 35. 
