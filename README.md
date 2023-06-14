@@ -138,6 +138,7 @@ Response:
 ```
 ./inner_dir_1/tf_4.txt
 ```
+We use the `-name` parameter to show that we are searching by names   
 ## 20. Clear the file tf_4.txt of its contents without deleting the file itself.  
 We can use the `>` redirection operator alone to clear the contents of a file without deleting the file itself.  
 Using `>` without any preceding command will truncate the file "tf_4.txt" to zero length, effectively clearing its contents while preserving the file itself.
@@ -160,7 +161,7 @@ Response:
 In the context of the find command, the asterisk `*` is a wildcard character that represents any number of characters.
 By using `./` as the starting point, the search is limited to the current directory.
 ## 22. Find the path to files that have "tf" in the name and letters in any case
-The `-name` parameter searches for file names without case
+The `-iname` parameter searches for file names without case
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
 $ find ./ -iname "*tf*"
