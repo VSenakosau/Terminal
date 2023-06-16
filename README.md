@@ -209,7 +209,8 @@ Response:
 grep: inner_dir_1: Is a directory
 tf_2.txt:the sec 3
 ```
-The `-w`option ensures that only lines with "sec" as a standalone word are matched, excluding cases where "sec" is part of a larger word.
+The `-w`option ensures that only lines with "sec" as a standalone word are matched, excluding cases where "sec" is part of a larger word.   
+`*` is used to represent all files in the current directory.   
 ## 26. Find lines in files where there is only a combination of letters "sec" in any case in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
@@ -220,6 +221,7 @@ Response:
 grep: inner_dir_1: Is a directory
 tf_2.txt:the sec 3
 ```
+`-i` makes the search case-insensitive, allowing matches regardless of letter case.   
 ## 27. Find lines in files where there is a combination of letters "second" in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
@@ -251,28 +253,19 @@ Response:
 inner_dir_1/tf_3.txt:the second
 tf_2.txt:- the second 2
 ```
+`-r` - enables recursive searching in subdirectories.   
 ## 30. Find only the path and file name with the combination of the letters "second" in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -l "second" *
+$ grep -l "second" ./*
 ```
 Response:
 ```
 grep: inner_dir_1: Is a directory
-tf_2.txt
-```
-or
-```
-vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -ls "second" *
-```
-Response:
-```
-tf_2.txt
+./tf_2.txt
 ```
 `-l` option: This option instructs grep to display only the filenames of the matching files, rather than showing the matching lines.  
 The directory inner_dir_1 is listed as an error message when using grep `-l "second" *` because it is treated as a file, and grep attempts to search within it.  
-The `-s` option suppresses the error message for the directory inner_dir_1.  
 ## 31. Find all lines in all files where there is no “second” combination
 ```
 vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
