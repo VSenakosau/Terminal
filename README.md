@@ -116,10 +116,10 @@ As a result, we see the added line with the keyword in the console:
 Knowledge you pass on,
 Thank you for the knowledge!
 ```
-To exit the command, press Ctrl + C
-`tail -f` command is used to output the last part of a file and the `-f` option enables "follow mode" to monitor the file continuously for new updates.   
-`|` is used to redirect the output of the preceding command as the input to the following command.
-`grep -i "knowledge"`  is used to search for specific patterns or text within the input. The `-i` option is used to perform a case-insensitive search.   
+To exit the command, press Ctrl + C   
+`tail -f` command is used to output the last part of a file and the `-f` option enables "follow mode" to monitor the file continuously for new updates.      
+`|` is used to redirect the output of the preceding command as the input to the following command.   
+`grep -i "knowledge"`  is used to search for specific patterns or text within the input. The `-i` option is used to perform a case-insensitive search.      
 ## 17. Show the first few lines from a text file.
 ```
 vvsen@Vadim MINGW64 /c/vadim/qa/hw_terminal/hw1
