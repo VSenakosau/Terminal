@@ -177,7 +177,7 @@ Response:
 ## 23. Find lines in files where there is a combination of letters "sec" in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep "sec" *
+$ grep "sec" ./*
 ```
 Response:
 ```
@@ -185,11 +185,11 @@ grep: inner_dir_1: Is a directory
 tf_2.txt:- the second 2
 tf_2.txt:the sec 3
 ```
-grep "sec" `*` searches only within the files in the current directory, excluding subdirectories
+`*` is a wildcard that represents all files in the directory.   
 ## 24. Find lines in files where there is a combination of letters "sec" in any case in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -i "sec" *
+$ grep -i "sec" ./*
 ```
 Response:
 ```
@@ -202,7 +202,7 @@ The `-i` option instructs grep to ignore the case of the letters when performing
 ## 25. Find lines in files where there is only a combination of letters "sec" in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -w "sec" *
+$ grep -w "sec" ./*
 ```
 Response:
 ```
@@ -214,7 +214,7 @@ The `-w`option ensures that only lines with "sec" as a standalone word are match
 ## 26. Find lines in files where there is only a combination of letters "sec" in any case in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -wi "sec" *
+$ grep -wi "sec" ./*
 ```
 Response:
 ```
@@ -225,7 +225,7 @@ tf_2.txt:the sec 3
 ## 27. Find lines in files where there is a combination of letters "second" in the current folder
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep "second" *
+$ grep "second" ./*
 ```
 Response:
 ```
@@ -246,7 +246,7 @@ tf_2.txt:the seConD 2
 ## 29. Find lines in files where there is a combination of letters "second" in all folders below the level
 ```
 vvsen@Vadim MINGW64 /C/Vadim/QA/HW_terminal/hw2/dir_1
-$ grep -r "second"
+$ grep -r "second" *
 ```
 Response:
 ```
