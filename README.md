@@ -347,11 +347,11 @@ After entering the information in `tf_3.txt` press `Ctrl+D` to save and exit
 ## 36. One-line command. Move all text files that contain the word "sec" in their content to any single folder
 ```
 vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
-$ grep -rl 'sec' ./ | xargs mv -t folder35
+$ grep -rl "sec" ./ | xargs mv -t folder35
 ```
 Result:
 Files `tf_2.txt` and `tf_3.txt` were moved to `folder35`   
-`grep -rl 'sec'` - this command recursively searches for the word "sec" in the contents of all files in the current directory and its subdirectories    
+`grep -rl "sec"` - this command recursively searches for the word "sec" in the contents of all files in the current directory and its subdirectories    
 The `-r` option enables recursive searching, and the `-l` option outputs only the matching file names   
  The `.` specifies the current directory as the starting point for the search   
 `|` - the pipe symbol  is used to redirect the output of the previous command as input to the next command   
@@ -360,11 +360,11 @@ The `-t` option specifies the target directory for moving the files
 ## 37. One-line command. Copy all text files containing the word "sec" in their contents to any separate folder.
 ```
 vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
-$ grep -rl 'sec' . | xargs -I {} cp {} inner_dir_1
+$ grep -rl "sec" ./ | xargs -I {} cp {} inner_dir_1
 ```
 Result:
 Files `tf_2.txt` and `tf_3.txt` were copied to the `inner_dir_1 folder`   
-`grep -rl 'sec' .` command searches for files in the current directory and its subdirectories that contain the word "sect" in their contents and outputs the matching file names   
+`grep -rl "sec" ./` command searches for files in the current directory and its subdirectories that contain the word "sect" in their contents and outputs the matching file names   
 the `|` (pipe) symbol connects the output of the previous command to the input of the xargs command   
 the xargs `-I {} cp {} inner_dir_1/` command takes each line of the input (i.e., the file names) and replaces the {} placeholder with the current line/file name   
 ## 38. One-line command. Find all lines with “sec" in all text files, copy and paste these lines into one newly created text file.
@@ -389,7 +389,7 @@ output is redirected to the file `tf_38.txt` using the `>` symbol
 ## 39. One-line command. Delete text files that contain the word "sec" in their content.
 ```
 vvsen@Vadim MINGW64 /c/Vadim/QA/Hw_terminal/hw2/dir_1
-$ grep -rl 'sec' ./ | xargs -I {} rm {}
+$ grep -rl "sec" ./ | xargs -I {} rm {}
 ```
 Result: files that have the word `“sec”` in their contents have been deleted   
 `grep -rl 'sec'` - this command searches for text files in the current directory `.` and its subdirectories that contain the word `"sec"`, the `-r` option enables recursive searching, and the `-l` option outputs only the matching file names   
