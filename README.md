@@ -364,7 +364,7 @@ $ grep -rl "sec" ./ | xargs -I {} cp {} inner_dir_1
 ```
 Result:
 Files `tf_2.txt` and `tf_3.txt` were copied to the `inner_dir_1 folder`   
-`grep -rl "sec" ./` command searches for files in the current directory and its subdirectories that contain the word "sect" in their contents and outputs the matching file names   
+`grep -rl "sec" ./` command searches for files in the current directory and subdirectories that contain the word "sec" in their contents and outputs the matching file names   
 the `|` (pipe) symbol connects the output of the previous command to the input of the xargs command   
 the xargs `-I {} cp {} inner_dir_1/` command takes each line of the input (i.e., the file names) and replaces the {} placeholder with the current line/file name   
 ## 38. One-line command. Find all lines with “sec" in all text files, copy and paste these lines into one newly created text file.
